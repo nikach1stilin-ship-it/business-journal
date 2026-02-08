@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стратегия Цифровизации 2026: Финансы и Бизнес</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+        
+        body { font-family: 'Roboto', sans-serif; background-color: #F3F4F6; }
+        
+        /* Chart Container Styling */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Donut Chart Center Text */
+        .donut-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+            text-align: center;
+            pointer-events: none;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-blue-600 text-white p-8 shadow-lg">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">Цифровая Стратегия: 2026</h1>
+            <h2 class="text-xl opacity-90">«Финансы и бизнес»: План развития и монетизации</h2>
+            <p class="mt-4 text-blue-100 max-w-2xl">
+                Интерактивная справка: анализ текущего положения, план запуска и прогноз финансовой эффективности проекта.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-4 md:p-8 space-y-12">
+
+        <!-- Section 1: The Problem -->
+        <section>
+            <div class="bg-white rounded-lg p-6 card-shadow border-l-4 border-orange-500">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">1. Текущая ситуация: Потеря аудитории</h3>
+                <p class="mb-6 text-gray-600">
+                    На начало 2026 года основной трафик научных статей идет через агрегаторы. Отсутствие полноценной HTML-версии статей делает журнал "невидимым" для алгоритмов, несмотря на качественный контент.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="chart-container">
+                        <canvas id="visibilityChart"></canvas>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 font-bold text-xl">!</div>
+                            <div class="ml-4">
+                                <h4 class="font-bold">Локальная известность</h4>
+                                <p class="text-sm text-gray-600">Журнал цитируется "по старой памяти", но новые авторы не находят его в выдаче.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 flex items-center justify-center rounded-full bg-orange-100 text-orange-600 font-bold text-xl">PDF</div>
+                            <div class="ml-4">
+                                <h4 class="font-bold">Проблема формата</h4>
+                                <p class="text-sm text-gray-600">Поисковики плохо индексируют PDF. Нужны веб-страницы для каждой статьи.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Timeline -->
+        <section>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 px-2">2. Дорожная карта запуска (1 Месяц)</h3>
+            <div class="bg-white rounded-lg p-6 card-shadow">
+                <div class="chart-container" style="max-width: 100%;">
+                    <canvas id="timelineChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Tech Features -->
+        <section>
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 px-2">3. Инструменты нового поколения</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-lg card-shadow border-t-4 border-blue-500 hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">🤖</div>
+                    <h4 class="text-xl font-bold mb-2">AI-Модерация</h4>
+                    <p class="text-gray-600 text-sm">
+                        Первичная проверка входящих статей Искусственным Интеллектом. Анализ уникальности и соответствия теме до редактора.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-lg card-shadow border-t-4 border-orange-500 hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">📚</div>
+                    <h4 class="text-xl font-bold mb-2">Умный Архив</h4>
+                    <p class="text-gray-600 text-sm">
+                        Оцифровка старых выпусков. Ваша база знаний станет доступна для глобального поиска, повышая ИЦ журнала.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-lg card-shadow border-t-4 border-teal-500 hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h4 class="text-xl font-bold mb-2">Скорость Q1</h4>
+                    <p class="text-gray-600 text-sm">
+                        Современный интерфейс подачи заявок. Удобно для авторов, быстро для вас. Сокращение рутины на 40%.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Growth Forecast -->
+        <section>
+            <div class="bg-white rounded-lg p-6 card-shadow border-l-4 border-teal-500">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">4. Прогноз роста показателей (2026-2028)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="md:col-span-2 chart-container">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                    <div class="flex flex-col justify-center space-y-6">
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <span class="block text-3xl font-bold text-blue-600">+150%</span>
+                            <span class="text-sm text-gray-500">Охват аудитории (2027)</span>
+                        </div>
+                        <div class="text-center p-4 bg-orange-50 rounded-lg">
+                            <span class="block text-3xl font-bold text-orange-600">24/7</span>
+                            <span class="text-sm text-gray-500">Доступность архива</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Cost Breakdown -->
+        <section>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 px-2">5. Инвестиционная модель запуска</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-lg p-6 card-shadow relative">
+                <div class="chart-container flex justify-center items-center">
+                    <canvas id="budgetChart"></canvas>
+                    <div class="donut-inner">
+                        <span class="block text-gray-500 text-sm">Итого на старте</span>
+                        <span class="block text-2xl font-bold text-gray-800">~70 тыс.₽</span>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <h4 class="font-bold text-lg mb-4 text-gray-800">Детализация расходов:</h4>
+                    <div class="flex items-center justify-between p-3 bg-blue-50 rounded-lg mb-3 border-l-4 border-blue-600">
+                        <div>
+                            <span class="block font-bold text-gray-800">Разработка (Гонорар)</span>
+                            <span class="text-xs text-gray-500">Дизайн, Код, Настройка</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="block font-bold text-blue-700">50 000 ₽</span>
+                            <span class="text-xs text-gray-400">Единоразово</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-orange-50 rounded-lg mb-3 border-l-4 border-orange-500">
+                        <div>
+                            <span class="block font-bold text-gray-800">Внедрение ИИ (API)</span>
+                            <span class="text-xs text-gray-500">Ключи доступа к моделям</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="block font-bold text-orange-700">~15 000 ₽</span>
+                            <span class="text-xs text-gray-400">Тех. расходы</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-teal-50 rounded-lg border-l-4 border-teal-500">
+                        <div>
+                            <span class="block font-bold text-gray-800">Сервер и База Данных</span>
+                            <span class="text-xs text-gray-500">Хостинг, Домен, SQL БД</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="block font-bold text-teal-700">~5 000 ₽</span>
+                            <span class="text-xs text-gray-400">Тех. расходы</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Profit Forecast (NEW) -->
+        <section class="mb-12">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 px-2 mt-12">6. Экономика проекта: Прогноз окупаемости</h3>
+            <div class="bg-white rounded-lg p-6 card-shadow border-l-4 border-green-500">
+                <p class="mb-6 text-gray-600">
+                    Благодаря внедрению платных сервисов (ускоренная модерация, оформление ссылок, Pro-подписка) сайт не просто окупает содержание, но и приносит прибыль уже со второго года работы.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                     <div class="chart-container">
+                        <canvas id="profitChart"></canvas>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-3">Источники монетизации:</h4>
+                        <ul class="space-y-3 text-sm text-gray-700">
+                            <li class="flex items-start">
+                                <span class="bg-green-100 text-green-800 font-bold px-2 py-0.5 rounded mr-2">1</span>
+                                <span><strong>Комиссия за процессинг:</strong> Небольшая плата за автоматическую проверку и форматирование статей по ГОСТ.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-green-100 text-green-800 font-bold px-2 py-0.5 rounded mr-2">2</span>
+                                <span><strong>Fast-Track (Ускорение):</strong> Платная опция для авторов, которым нужна срочная публикация (через ИИ-премодерацию).</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-green-100 text-green-800 font-bold px-2 py-0.5 rounded mr-2">3</span>
+                                <span><strong>Pro-доступ:</strong> Подписка на расширенную аналитику и доступ к полному архиву без рекламы.</span>
+                            </li>
+                        </ul>
+                         <div class="mt-8 p-5 bg-green-50 rounded-lg text-center border border-green-200">
+                            <span class="block text-sm text-gray-500 uppercase tracking-wide">Прогнозируемая чистая прибыль</span>
+                            <span class="block text-3xl font-bold text-green-600 mt-1">> 350 000 ₽</span>
+                            <span class="block text-xs text-gray-400 mt-1">в год к 2028 году</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white p-8 mt-12 text-center">
+        <p class="font-bold text-lg">Готов обсудить детали и приступить к работе.</p>
+        <p class="opacity-70 mt-2">Разработка концепции: Никита | 2026</p>
+    </footer>
+
+    <!-- Chart Scripts -->
+    <script>
+        // --- UTILITY FUNCTIONS ---
+        function splitLabel(label) {
+            const maxLen = 16;
+            if (label.length <= maxLen) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + " " + words[i]).length <= maxLen) {
+                    currentLine += " " + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    return Array.isArray(label) ? label.join(' ') : label;
+                }
+            }
+        };
+
+        // --- CHARTS ---
+
+        // 1. Visibility Chart
+        const ctxVis = document.getElementById('visibilityChart').getContext('2d');
+        new Chart(ctxVis, {
+            type: 'bar',
+            data: {
+                labels: ['Текущий Охват (Печать/PDF)', 'Потенциальный Охват (Web/SEO)'].map(splitLabel),
+                datasets: [{
+                    label: 'Активная Аудитория (тыс. чел/год)',
+                    data: [2.5, 14.5],
+                    backgroundColor: ['#9CA3AF', '#2563EB'],
+                    borderRadius: 6,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false }, tooltip: tooltipConfig },
+                scales: { y: { beginAtZero: true } }
+            }
+        });
+
+        // 2. Timeline Chart
+        const ctxTime = document.getElementById('timelineChart').getContext('2d');
+        new Chart(ctxTime, {
+            type: 'bar',
+            data: {
+                labels: ['1. Дизайн UI/UX', '2. Миграция Архива', '3. AI Интеграция', '4. Тесты и Запуск'].map(splitLabel),
+                datasets: [{
+                    label: 'Трудозатраты',
+                    data: [25, 80, 55, 20],
+                    backgroundColor: '#F97316',
+                    borderRadius: 4,
+                    indexAxis: 'y',
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false }, tooltip: tooltipConfig },
+                scales: { x: { display: false } }
+            }
+        });
+
+        // 3. Growth Forecast
+        const ctxGrowth = document.getElementById('growthChart').getContext('2d');
+        new Chart(ctxGrowth, {
+            type: 'line',
+            data: {
+                labels: ['2025 (Факт)', '2026 (Старт)', '2027 (Рост)', '2028 (Лидер)'].map(splitLabel),
+                datasets: [
+                    {
+                        label: 'Без изменений',
+                        data: [100, 102, 104, 106],
+                        borderColor: '#9CA3AF',
+                        borderDash: [5, 5],
+                        tension: 0.4
+                    },
+                    {
+                        label: 'С новой платформой',
+                        data: [100, 150, 280, 420],
+                        borderColor: '#0D9488',
+                        backgroundColor: 'rgba(13, 148, 136, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { tooltip: tooltipConfig, legend: { position: 'bottom' } }
+            }
+        });
+
+        // 4. Budget Breakdown
+        const ctxBudget = document.getElementById('budgetChart').getContext('2d');
+        new Chart(ctxBudget, {
+            type: 'doughnut',
+            data: {
+                labels: ['Гонорар Разработчика (Фикс)', 'Внедрение ИИ (Расходы)', 'Сервер и БД (Расходы)'].map(splitLabel),
+                datasets: [{
+                    data: [50000, 15000, 5000],
+                    backgroundColor: ['#2563EB', '#F97316', '#0D9488'],
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: { tooltip: tooltipConfig, legend: { display: false } }
+            }
+        });
+
+        // 6. PROFIT CHART (NEW)
+        const ctxProfit = document.getElementById('profitChart').getContext('2d');
+        new Chart(ctxProfit, {
+            type: 'bar',
+            data: {
+                labels: ['2026 (Запуск)', '2027 (Рост)', '2028 (Масштаб)'],
+                datasets: [
+                    {
+                        label: 'Расходы (Хостинг + API)',
+                        data: [60, 80, 100], 
+                        backgroundColor: '#EF4444', // Red-ish
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Выручка (Сервисы)',
+                        data: [90, 250, 480], 
+                        backgroundColor: '#10B981', // Green
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: tooltipConfig,
+                    legend: { position: 'bottom' }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Тыс. рублей' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
